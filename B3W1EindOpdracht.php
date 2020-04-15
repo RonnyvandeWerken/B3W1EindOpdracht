@@ -12,19 +12,20 @@
 		</style>
 
 		<?php
+		date_default_timezone_set("Europe/Amsterdam");
+
 		$image = '';   
-		$t = date("h:i");
+		$t = date("H:i");
 
-
-		if ($t < "12") {
+		if ($t < "12:00") {
 			echo "goedemorgen ";
 			$image = 'images/morning.png';
 			
-		} elseif ($t < "18") {
+		} elseif ($t < "18:00") {
 		    echo "goedermiddag ";
 		    $image = 'images/afternoon.png';
 
-		} elseif ($t < "24") {
+		} elseif ($t < "24:00") {
 			echo "goedeavond ";
 			$image = 'images/evening.png';
 
@@ -33,8 +34,7 @@
 			 $image = 'images/night.png';
 			}	
 
-	date_default_timezone_set("Europe/Amsterdam");
-    echo "het is nu " . date("h:i");
+   		 echo "het is nu " . date("H:i");
 
 	?>
 	<body style="background-image:url('<?php echo $image; ?>')">
